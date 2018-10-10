@@ -1,0 +1,3 @@
+rootProject.name = 'intellij-gradle-boot-spring-boot'
+include 'spring5'
+
