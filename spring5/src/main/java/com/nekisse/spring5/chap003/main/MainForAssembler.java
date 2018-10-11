@@ -1,4 +1,7 @@
-package com.nekisse.spring5.chap003;
+package com.nekisse.spring5.chap003.main;
+
+import com.nekisse.spring5.chap003.assembler.Assembler;
+import com.nekisse.spring5.chap003.spring.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;

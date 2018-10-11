@@ -1,4 +1,4 @@
-package com.nekisse.spring5.chap003;
+package com.nekisse.spring5.chap003.spring;
 
 public class WrongIdPasswordException extends RuntimeException {
 

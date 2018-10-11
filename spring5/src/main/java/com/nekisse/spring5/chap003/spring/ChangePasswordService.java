@@ -1,4 +1,4 @@
-package com.nekisse.spring5.chap003;
+package com.nekisse.spring5.chap003.spring;
 
 public class ChangePasswordService {
     private MemberDao memberDao;

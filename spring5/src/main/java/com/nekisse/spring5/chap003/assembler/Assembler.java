@@ -1,4 +1,8 @@
-package com.nekisse.spring5.chap003;
+package com.nekisse.spring5.chap003.assembler;
+
+import com.nekisse.spring5.chap003.spring.ChangePasswordService;
+import com.nekisse.spring5.chap003.spring.MemberDao;
+import com.nekisse.spring5.chap003.spring.MemberRegisterService;
 
 public class Assembler {
 
