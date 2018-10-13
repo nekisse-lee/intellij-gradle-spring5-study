@@ -1,49 +1,55 @@
-package com.nekisse.spring5.chap003.config;
+package config;
 
-import com.nekisse.spring5.chap003.spring.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import spring.*;
 
 @Configuration
 public class AppCtx {
 
-/*
     @Bean
     public MemberDao memberDao() {
-        return new MemberDao();
+        return  new MemberDao();
     }
-
 
     @Bean
     public MemberRegisterService memberRegSvc() {
-        return  new MemberRegisterService(memberDao());
+        return new MemberRegisterService();
     }
-
 
     @Bean
     public ChangePasswordService changePwdSvc() {
-        ChangePasswordService pwdSvc = new ChangePasswordService();
-        pwdSvc.setMemberDao(memberDao());
-        return pwdSvc;
+        return new ChangePasswordService();
     }
 
-    @Bean
+    /*@Bean
     public MemberPrinter memberPrinter() {
+        return new MemberPrinter();
+    }*/
+
+    @Bean
+    @Qualifier("printer")
+    public MemberPrinter memberPrinter1() {
         return new MemberPrinter();
     }
 
     @Bean
+    @Qualifier("summaryPrinter")
+    public MemberSummaryPrinter memberPrinter2() {
+        return new MemberSummaryPrinter();
+    }
+
+    @Bean
     public MemberListPrinter listPrinter() {
-        return new MemberListPrinter(memberDao(), memberPrinter());
+        return new MemberListPrinter();
     }
 
     @Bean
     public MemberInfoPrinter infoPrinter() {
-        MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-        infoPrinter.setMemberDao(memberDao());
-        infoPrinter.setPrinter(memberPrinter());
-        return infoPrinter;
+        return new MemberInfoPrinter();
     }
+
 
     @Bean
     public VersionPrinter versionPrinter() {
@@ -52,5 +58,4 @@ public class AppCtx {
         versionPrinter.setMinorVersion(0);
         return versionPrinter;
     }
-*/
 }

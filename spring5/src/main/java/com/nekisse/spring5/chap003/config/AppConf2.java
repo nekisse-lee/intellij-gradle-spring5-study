@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 public class AppConf2 {
+
+
     @Autowired
     private MemberDao memberDao;
     @Autowired

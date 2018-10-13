@@ -1,3 +1,5 @@
 rootProject.name = 'intellij-gradle-boot-spring-boot'
 include 'spring5'
+include 'spring5-chap04'
+include 'spring5-chap04'
 
