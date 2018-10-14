@@ -1,9 +1,10 @@
-package spring;
+package com.nekisse.spring;
+
+import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
-
-import java.time.format.DateTimeFormatter;
 
 public class MemberPrinter {
 	private DateTimeFormatter dateTimeFormatter;
@@ -27,15 +28,8 @@ public class MemberPrinter {
 		}
 	}
 	
-/*
 	@Autowired(required = false)
 	public void setDateFormatter(DateTimeFormatter dateTimeFormatter) {
-		this.dateTimeFormatter = dateTimeFormatter;
-	}
-*/
-
-	@Autowired
-	public void setDateFormatter(@Nullable DateTimeFormatter dateTimeFormatter) {
 		this.dateTimeFormatter = dateTimeFormatter;
 	}
 
@@ -48,6 +42,9 @@ public class MemberPrinter {
 //		}
 //	}
 	
-
-
+//	@Autowired
+//	public void setDateFormatter(@Nullable DateTimeFormatter dateTimeFormatter) {
+//		this.dateTimeFormatter = dateTimeFormatter;
+//	}
+	
 }
