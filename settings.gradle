@@ -4,4 +4,5 @@ include 'spring5-chap04'
 include 'spring5-chap04'
 include 'spring5-chap05'
 include 'spring5-chap06'
+include 'spring5-chap07-aop'
 

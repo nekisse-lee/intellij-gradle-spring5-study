@@ -1,22 +1,18 @@
 package com.nekisse.main;
 
+import com.nekisse.chap07.CalCulator;
 import com.nekisse.config.AppCtx;
-import com.nekisse.spring.Client;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class Main {
+public class MainAspect {
     public static void main(String[] args) {
-
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
 
-        Client client = ctx.getBean(Client.class);
-        Client client1 = ctx.getBean(Client.class);
-
-        System.out.println(client==client1);
-        client.send();
-
+        CalCulator cal = ctx.getBean("calculator", CalCulator.class);
+        long fiveFact = cal.factorial(5);
+        System.out.println("ca.factorial(5) = " + fiveFact);
+        System.out.println(cal.getClass().getName());
         ctx.close();
-
     }
 }
