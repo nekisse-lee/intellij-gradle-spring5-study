@@ -1,6 +1,6 @@
 package com.nekisse.chap07;
 
-public class RecCalculator implements CalCulator {
+public class RecCalculator implements Calculator {
     @Override
     public long factorial(long num) {
         if (num == 0) {

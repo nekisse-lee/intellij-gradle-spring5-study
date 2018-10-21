@@ -1,11 +1,11 @@
 package com.nekisse.chap07;
 
-public class ExTimeCalculator implements CalCulator {
+public class ExTimeCalculator implements Calculator {
 
 
-    private CalCulator delegate;
+    private Calculator delegate;
 
-    public ExTimeCalculator(CalCulator delegate) {
+    public ExTimeCalculator(Calculator delegate) {
         this.delegate = delegate;
     }
 

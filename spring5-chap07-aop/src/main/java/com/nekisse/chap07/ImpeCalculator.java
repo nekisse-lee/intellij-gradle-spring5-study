@@ -1,6 +1,6 @@
 package com.nekisse.chap07;
 
-public class ImpeCalculator implements CalCulator {
+public class ImpeCalculator implements Calculator {
     @Override
     public long factorial(long num) {
         long result = 1;
