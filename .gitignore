@@ -152,3 +152,29 @@ gradle-app.setting
 
 # End of https://www.gitignore.io/api/gradle,intellij,intellij+all
 /spring-chap08-db/src/main/java/com/nekisse/config/DbConfig.java
+!/spring-chap08-db/build.gradle
+boot-spring-boot/src/main/resources/static/
+boot-spring-boot/src/main/resources/templates/
+spring-chap08-db/build.gradle
+spring-chap08-db/gradle/
+spring-chap08-db/gradlew
+spring-chap08-db/gradlew.bat
+spring-chap08-db/src/main/java/com/nekisse/config/AppCtx.java
+spring-chap08-db/src/main/java/com/nekisse/sql/
+spring-chap08-db/src/main/resources/
+spring-chap08-db/src/test/
+spring5-chap04/build/
+spring5-chap04/src/main/resources/
+spring5-chap04/src/test/
+spring5-chap05/build.gradle
+spring5-chap05/build/
+spring5-chap05/src/main/resources/
+spring5-chap05/src/test/
+spring5-chap06/build.gradle
+spring5-chap06/src/main/resources/
+spring5-chap06/src/test/
+spring5-chap07-aop/build.gradle
+spring5-chap07-aop/src/main/resources/
+spring5-chap07-aop/src/test/
+spring5/src/main/resources/
+spring5/src/test/
