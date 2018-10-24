@@ -158,7 +158,6 @@ spring-chap08-db/build.gradle
 spring-chap08-db/gradle/
 spring-chap08-db/gradlew
 spring-chap08-db/gradlew.bat
-spring-chap08-db/src/main/java/com/nekisse/config/AppCtx.java
 spring-chap08-db/src/main/java/com/nekisse/sql/
 spring-chap08-db/src/main/resources/
 spring-chap08-db/src/test/
