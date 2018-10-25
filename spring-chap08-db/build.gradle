@@ -19,6 +19,8 @@ dependencies {
     compile 'mysql:mysql-connector-java:5.1.45'
     compile 'org.slf4j:slf4j-api:1.7.25'
     compile 'ch.qos.logback:logback-classic:1.2.3'
+
+
 }
 
 task wrapper(type: Wrapper) {
