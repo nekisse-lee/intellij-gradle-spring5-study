@@ -171,3 +171,6 @@ spring5-chap07-aop/src/main/resources/
 spring5-chap07-aop/src/test/
 spring5/src/main/resources/
 spring5/src/test/
+!/spring5-chap11-mvc2/build.gradle
+!/spring5-chap11-mvc2/gradlew
+!/spring5-chap11-mvc2/gradlew.bat
