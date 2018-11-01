@@ -11,10 +11,10 @@ import spring.RegisterRequest;
 
 @Controller
 public class RegisterController {
-
     private MemberRegisterService memberRegisterService;
 
-    public void setMemberRegisterService(MemberRegisterService memberRegisterService) {
+    public void setMemberRegisterService(
+            MemberRegisterService memberRegisterService) {
         this.memberRegisterService = memberRegisterService;
     }
 
@@ -48,9 +48,8 @@ public class RegisterController {
     }
 
 
-    @PostMapping("register/step3")
+    @PostMapping("/register/step3")
     public String handleStep3(RegisterRequest regReq) {
-
         try {
             memberRegisterService.regist(regReq);
             return "register/step3";
