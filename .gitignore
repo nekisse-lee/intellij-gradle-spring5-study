@@ -175,3 +175,4 @@ spring5/src/test/
 !/spring5-chap11-mvc2/gradlew
 !/spring5-chap11-mvc2/gradlew.bat
 **.jar
+**/build
