@@ -1,6 +1,7 @@
 package controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import spring.RegisterRequest;
 
 @Controller
 public class RegisterController {
+
     private MemberRegisterService memberRegisterService;
 
     public void setMemberRegisterService(
@@ -35,15 +37,16 @@ public class RegisterController {
 */
 
     @PostMapping("/register/step2")
-    public String handleStep2(@RequestParam(name = "agree", defaultValue = "false") Boolean agree) {
+    public String handleStep2(@RequestParam(name = "agree", defaultValue = "false") Boolean agree, Model model) {
         if (!agree) {
             return "register/step1";
         }
+        model.addAttribute("registerRequest", new RegisterRequest());
         return "register/step2";
     }
 
     @GetMapping
-    public String handleStep2() {
+    public String handleStep2Get() {
         return "redirect:/register/step1";
     }
 
@@ -57,5 +60,4 @@ public class RegisterController {
             return "register/step2";
         }
     }
-
 }
