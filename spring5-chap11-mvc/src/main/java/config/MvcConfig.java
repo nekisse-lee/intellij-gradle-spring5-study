@@ -13,12 +13,14 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-        registry.jsp("/WEB-INF/view/",".jsp");
+        registry.jsp("/WEB_INF/view/",".jsp");
     }
 
+/*
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/main").setViewName("main");
 
     }
+*/
 }
