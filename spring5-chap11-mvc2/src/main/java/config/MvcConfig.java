@@ -21,7 +21,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("main2").setViewName("main2");
+        registry.addViewController("/main").setViewName("main");
 
     }
 }

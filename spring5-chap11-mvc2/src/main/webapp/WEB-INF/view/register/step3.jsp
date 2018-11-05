@@ -14,7 +14,7 @@
 <body>
 <p><strong>${user.name}님!! 반갑습니다. </strong>
     회원 가입 완료</p>
-<p><a href="<c:url value="/main2"/> ">[main2 첫 화면 이동]</a></p>
+<p><a href="<c:url value="/main"/> ">[main2 첫 화면 이동]</a></p>
 
 
 </body>

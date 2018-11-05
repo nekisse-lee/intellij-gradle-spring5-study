@@ -22,19 +22,10 @@ public class RegisterController {
         return "register/step1";
     }
 
-/*
-    @RequestMapping(value = "/register/step2", method = RequestMethod.POST)
-    public String handleStep2(HttpServletRequest request) {
-        String agree = request.getParameter("agree");
-        if (agree == null || !agree.equals("true")) {
-            return "register/step1";
-        }
-        return "register/step2";
-    }
-*/
-
     @PostMapping("/register/step2")
-    public String handleStep2(@RequestParam(name = "agree", defaultValue = "false") Boolean agree, Model model) {
+    public String handleStep2(
+            @RequestParam(value = "agree", defaultValue = "false") Boolean agree,
+            Model model) {
         if (!agree) {
             return "register/step1";
         }
@@ -42,14 +33,13 @@ public class RegisterController {
         return "register/step2";
     }
 
-    @GetMapping
+    @GetMapping("/register/step2")
     public String handleStep2Get() {
         return "redirect:/register/step1";
     }
 
-
     @PostMapping("/register/step3")
-    public String handleStep3(@ModelAttribute("user") RegisterRequest regReq) {
+    public String handleStep3(RegisterRequest regReq) {
         try {
             memberRegisterService.regist(regReq);
             return "register/step3";
@@ -57,4 +47,10 @@ public class RegisterController {
             return "register/step2";
         }
     }
+
+    @GetMapping("/main")
+    public String main() {
+        return "main";
+    }
+
 }
