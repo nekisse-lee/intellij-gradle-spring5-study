@@ -48,9 +48,9 @@ public class RegisterController {
         }
     }
 
-    @GetMapping("/main")
+    /*@GetMapping("/main")
     public String main() {
-        return "main";
-    }
+        return "/main";
+    }*/
 
 }
