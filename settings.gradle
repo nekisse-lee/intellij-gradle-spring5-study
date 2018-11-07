@@ -7,5 +7,6 @@ include 'spring5-chap07-aop'
 include 'spring-chap08-db'
 include 'test111111'
 include 'sring5-chap09-mvc'
-include 'spring5-chap11-mvc2'
+//include 'spring5-chap11-mvc2'
+include 'spring5-chap12'
 
