@@ -9,9 +9,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegisterRequestValidator implements Validator {
+
     private static final String emailRegExp =
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
                     "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
     private Pattern pattern;
 
     public RegisterRequestValidator() {

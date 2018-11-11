@@ -9,4 +9,6 @@ include 'test111111'
 include 'sring5-chap09-mvc'
 //include 'spring5-chap11-mvc2'
 include 'spring5-chap12'
+include 'sp5-chap12-gl'
+include 'sp5-chap12-bv'
 
