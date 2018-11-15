@@ -2,6 +2,7 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,8 @@ import spring.AuthInfo;
 import spring.AuthService;
 import spring.WrongIdPasswordException;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -22,12 +25,16 @@ public class LoginController {
     }
 
     @GetMapping
-    public String from(LoginCommand loginCommand) {
+    public String from(LoginCommand loginCommand, @CookieValue(value = "REMEMBER", required = false) Cookie rCookie) {
+        if (rCookie != null) {
+            loginCommand.setEmail(rCookie.getValue());
+            loginCommand.setRememberEmail(true);
+        }
         return "login/loginForm";
     }
 
     @PostMapping
-    public String submit(LoginCommand loginCommand, Errors errors, HttpSession session) {
+    public String submit(LoginCommand loginCommand, Errors errors, HttpSession session, HttpServletResponse response) {
         new LoginCommandValidator().validate(loginCommand, errors);
         if (errors.hasErrors()) {
             return "login/loginForm";
@@ -38,8 +45,18 @@ public class LoginController {
                     loginCommand.getEmail(),
                     loginCommand.getPassword()
             );
-            // TODO: 2018. 11. 14.  세션에 authinfo  저장해야함
+            // TODO: 2018. 11. 14.  세션에 authinfo  저장
             session.setAttribute("authInfo", authInfo);
+
+            Cookie rememberCookie = new Cookie("REMEMBER", loginCommand.getEmail());
+            rememberCookie.setPath("/");
+            if (loginCommand.isRememberEmail()) {
+                rememberCookie.setMaxAge(60 * 60 * 24 * 30);
+            } else {
+                rememberCookie.setMaxAge(0);
+            }
+            response.addCookie(rememberCookie);
+
             return "login/loginSuccess";
         } catch (WrongIdPasswordException e) {
             errors.reject("idPasswordNotMatching");
