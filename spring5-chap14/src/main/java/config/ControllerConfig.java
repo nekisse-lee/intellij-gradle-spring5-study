@@ -21,8 +21,10 @@ public class ControllerConfig {
 
 	@Autowired
 	private ChangePasswordService changePasswordService;
+
 	@Autowired
 	private MemberDao memberDao;
+
 
 	@Bean
 	public RegisterController registerController() {
@@ -54,6 +56,13 @@ public class ControllerConfig {
 	@Bean
 	public MemberListController memberListController() {
 		MemberListController controller = new MemberListController();
+		controller.setMemberDao(memberDao);
+		return controller;
+	}
+
+	@Bean
+	public MemberDetailController memberDetailController() {
+		MemberDetailController controller = new MemberDetailController();
 		controller.setMemberDao(memberDao);
 		return controller;
 	}
