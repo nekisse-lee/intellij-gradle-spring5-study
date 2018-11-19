@@ -1,15 +1,10 @@
 package config;
 
+import controller.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import controller.ChangePwdController;
-import controller.LoginController;
-import controller.LogoutController;
-import controller.MemberDetailController;
-import controller.MemberListController;
-import controller.RegisterController;
 import spring.AuthService;
 import spring.ChangePasswordService;
 import spring.MemberDao;
@@ -65,5 +60,13 @@ public class ControllerConfig {
 		MemberDetailController controller = new MemberDetailController();
 		controller.setMemberDao(memberDao);
 		return controller;
+	}
+
+	@Bean
+	public RestMemberController restApi() {
+		RestMemberController cont = new RestMemberController();
+		cont.setMemberDao(memberDao);
+		cont.setRegisterService(memberRegSvc);
+		return cont;
 	}
 }

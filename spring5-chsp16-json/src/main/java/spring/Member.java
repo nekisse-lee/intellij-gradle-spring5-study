@@ -1,5 +1,8 @@
 package spring;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -7,11 +10,14 @@ public class Member {
 
 	private Long id;
 	private String email;
+	@JsonIgnore
 	private String password;
 	private String name;
+
+//	@JsonFormat(pattern = "yyyy년 MM월 dd일 HH시 mm분 ss초")
 	private LocalDateTime registerDateTime;
 
-	public Member(String email, String password, 
+	public Member(String email, String password,
 			String name, LocalDateTime regDateTime) {
 		this.email = email;
 		this.password = password;
