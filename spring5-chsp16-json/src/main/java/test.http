@@ -5,8 +5,8 @@
 # * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
 # * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
 
-POST http://localhost:8080/register/step3
-Content-Type: application/json
+GET http://localhost:8080/api/members/1
+
 
 {"email":"str123@str.com","password":"str","confirmPassword":"str","name":"str"}
 

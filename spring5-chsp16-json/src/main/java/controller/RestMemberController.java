@@ -1,5 +1,7 @@
 package controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +24,7 @@ public class RestMemberController {
         return memberDao.selectAll();
     }
 
+/*
     @GetMapping("/api/members/{id}")
     public Member member(@PathVariable Long id, HttpServletResponse response) throws IOException {
         Member member = memberDao.selectById(id);
@@ -30,6 +33,19 @@ public class RestMemberController {
             return null;
         }
         return member;
+    }
+*/
+
+
+    @GetMapping("/api/members/{id}")
+    public ResponseEntity<Object> member(@PathVariable Long id)
+            throws IOException {
+        Member member = memberDao.selectById(id);
+        if (member == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ErrorResponse("No member"));
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(member);
     }
 
     public void setMemberDao(MemberDao memberDao) {
