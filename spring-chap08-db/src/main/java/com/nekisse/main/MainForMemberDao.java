@@ -39,7 +39,7 @@ public class MainForMemberDao {
 
     private static void updateMember() {
         System.out.println("-------updateMember");
-        Member member = memberDao.selectByEmail("nekisse@nekisse.com");
+        Member member = memberDao.selectByEmail("hello@hello.com");
         String oldPw = member.getPassword();
         String newPw = Double.toHexString(Math.random());
         member.changePassword(oldPw,newPw);

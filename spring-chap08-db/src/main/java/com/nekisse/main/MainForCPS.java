@@ -16,7 +16,7 @@ public class MainForCPS {
         ChangePasswordService cps = ctx.getBean("changePwdSvc", ChangePasswordService.class);
 
         try {
-            cps.changePassword("nekisse@nekisse.com", "1234", "1111");
+            cps.changePassword("hello@hello.com", "1234", "1111");
             System.out.println("암호를 변경 했습니다.");
         } catch (MemberNotFoundException e) {
             System.out.println("회원 데이터가 없습니다.");
